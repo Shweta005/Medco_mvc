@@ -1,0 +1,84 @@
+<div>
+  <header id="content-header">
+    {{ title }}
+  </header>
+
+  <div class="container ">
+    <div class="card">
+      <div class="card-header" role="tab" id="headingOne">
+        <h3 class=" name mb-0">
+          <span> </span>
+          <!-- <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> -->
+            Create Coupen
+          <!-- </a> -->
+        </h3>
+      </div>
+      <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+  <form [formGroup]="addCategoryForm"  (ngSubmit)="addCategory()">
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputEmail4">Category Id</label>
+        <input type="number" class="form-control" formControlName="catid" required placeholder="Category Id">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Category Name</label>
+        <input type="text/number" class="form-control"required formControlName="catname" placeholder="Category Name">
+      </div>
+      <div class="form-group col-md-4">
+
+        <button class="btn add btn-primary"  >Add Category</button>
+      </div>
+
+    </div>
+
+
+  </form>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+  <!--MDB Tables-->
+  <div class="container mt-4">
+    <div class="card mb-4">
+
+      <div class="card-body">
+
+        <!-- Grid row -->
+        <div class="row">
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+        <!--Table-->
+        <table class="table table-striped">
+          <!--Table head-->
+          <thead>
+            <tr>
+             <th>#</th>
+              <th>Category Name</th>
+
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <!--Table head-->
+          <!--Table body-->
+          <tbody *ngFor="let category of categories" >
+            <tr>
+             <th scope="row">{{category.catid}}</th>
+
+              <td>{{ category.catname }}</td>
+             <td><button class="btn btn-primary" (click)="deleteCategory(category)" >Delete</button>&nbsp;
+             <button class="btn btn-primary" (click)="editCategory(category)"   >Edit</button></td>
+            </tr>
+          </tbody>
+          <!--Table body-->
+        </table>
+        <!--Table-->
+      </div>
+    </div>
+  </div>

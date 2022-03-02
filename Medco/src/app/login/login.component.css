@@ -1,0 +1,35 @@
+.card{
+
+  border: none;
+  width: 500px;
+  padding: 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+transform: translate(-50%,-50%);
+ background-color:#5f93df;
+  background: linear-gradient(90deg,hsla(205, 46%, 30%,1),0%,hsla(260,29%,36%,1),100);
+}
+.card h1,h6{
+ color: rgb(5, 5, 5);
+}
+h1{
+  font-size: x-large;
+  font-weight: bolder;
+}
+.card h6{
+  font-size: medium;
+}
+label{
+  color: rgb(24, 23, 23);
+}
+
+.btn {
+  margin-left:10px;
+  background-color: #dee2e6;
+
+}
+.form-text{
+color: #0b0c0c;
+}

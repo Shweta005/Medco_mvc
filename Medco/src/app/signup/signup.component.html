@@ -1,0 +1,112 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+           <h1>Sign Up</h1>
+          <h6>Please register</h6> </div>
+<form [formGroup]='signupform' (ngSubmit)="add()">
+          <div class="mb-3">
+            <label for="exampleInputEmail1"  name="firstname" class="form-label">Firstname</label>
+            <input type="text" class="form-control" formControlName="firstName" id="firstname" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text"></div>
+            <span class="text-danger" *ngIf="firstName && firstName.invalid && firstName.touched">The input field is not valid</span>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1"  name="lastname" class="form-label">Lastname</label>
+            <input type="text" formControlName="lastName" class="form-control" id="lastname">
+            <span class="text-danger" *ngIf="lastName && lastName.invalid && lastName.touched">The input field is not valid</span>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" name="email" class="form-label">Email</label>
+            <input type="email" formControlName="email" class="form-control" id="email">
+            <span class="text-danger" *ngIf="email && email.invalid && email.touched">The input field is not valid</span>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" name="mobile" class="form-label">Mobile</label>
+            <input type="numeric" formControlName="mbleNo" class="form-control" id="mobile">
+            <span class="text-danger" *ngIf="mbleNo && mbleNo.invalid && mbleNo.touched">The input field is not valid</span>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1"  name="address" class="form-label">Address</label>
+            <textarea formControlName="address" class="form-control" ></textarea>
+            <small class="text-danger" *ngIf="mbleNo && mbleNo.invalid && mbleNo.touched"> Message is Required(minimum length 10)</small>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1"  name="password" class="form-label">Password</label>
+            <input  type="password"  formControlName="password" class="form-control" id="password">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1"  name="password" class="form-label"> Confirm Password</label>
+            <input type="password"  formControlName="confirmpassword" class="form-control" id="confirmpassword">
+          </div>
+
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+<a href="#"  style="color:black; margin-top: 10px" routerLink="/userlogin">Already Registered? Click to login!!</a>
+
+
+</div>
+</div>
+</div>
+</div> -->
+<div class="container">
+  <div class="row">
+<div class="container col-md-5">
+  <div class="card">
+    <div class="text-center">
+       <h1>Sign Up</h1>
+       </div>
+<form [formGroup]='signupform' (ngSubmit)="add()">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="exampleInputEmail1"  name="firstname"  class="form-label">Firstname</label>
+      <input type="text" class="form-control" formControlName="firstname"  placeholder="Firstname" id="firstname" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text"></div>
+      <span class="text-danger" *ngIf="firstName && firstName.invalid && firstName.touched">The input field is not valid</span>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="exampleInputPassword1"  name="lastname"  class="form-label">Lastname</label>
+      <input type="text" formControlName="lastname"  placeholder="Lastname" class="form-control" id="lastname">
+      <span class="text-danger" *ngIf="lastName && lastName.invalid && lastName.touched">The input field is not valid</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" name="email" class="form-label">Email</label>
+            <input type="email" formControlName="email" placeholder="Email" class="form-control" id="email">
+            <span class="text-danger" *ngIf="email && email.invalid && email.touched">The input field is not valid</span>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" name="mobile" class="form-label">Mobile</label>
+    <input type="numeric" formControlName="mbleno"  placeholder="Mobile No" class="form-control" id="mobile">
+    <span class="text-danger" *ngIf="mbleNo && mbleNo.invalid && mbleNo.touched">The input field is not valid</span>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1"  name="address" class="form-label">Address</label>
+            <textarea formControlName="address"  placeholder="Address" class="form-control" ></textarea>
+            <small class="text-danger" *ngIf="mbleNo && mbleNo.invalid && mbleNo.touched"> Message is Required(minimum length 10)</small>
+          </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="exampleInputPassword1"  name="password"  class="form-label">Password</label>
+      <input  type="password"  formControlName="password"  placeholder="Password" class="form-control" id="password"  i>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="exampleInputPassword1"  name="password"   class="form-label"> Confirm Password</label>
+            <input type="password"  formControlName="confirmpassword" placeholder="Confirm Password" class="form-control" id="confirmpassword">
+
+    </div>
+
+  </div>
+
+
+
+  <button type="submit" class="btn ">Sign in</button>
+</form>
+<a href="#"  style="color:black; margin-top: 10px" routerLink="/userlogin">Already Registered? Click to login!!</a>
+</div>
+</div>
+</div>
+</div>

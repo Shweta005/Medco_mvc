@@ -1,0 +1,84 @@
+<body>
+  <div id="menu-overlay"></div>
+  <div id="menu-toggle" class="closed" data-title="Menu">
+    <i><fa-icon [icon]="faBars"></fa-icon></i>
+    <!-- <i><fa-icon [icon]="faTimes"></fa-icon></i> -->
+    <!-- <i class="fa fa-bars" ></i>
+      <i class="fa fa-times"></i> -->
+  </div>
+  <header id="main-header">
+    <nav id="sidenav">
+      <div id="sidenav-header">
+        <div id="profile-picture">
+          <!-- <i><fa-icon [icon]="faUser"></fa-icon></i>-->
+          <img
+            src="https://th.bing.com/th/id/R.7c99cbc87981a979a4c29009ce14c7db?rik=BYwMnoD7%2fu%2b9PA&riu=http%3a%2f%2fgetdrawings.com%2ffree-icon%2fgeneric-avatar-icon-52.png&ehk=5LzIryywnRyZ0GaNH5nnYqu5ye1r2jHGJ1nYkYHiB%2fo%3d&risl=&pid=ImgRaw&r=0"
+          />
+        </div>
+        <a href="#" id="profile-link">Medco Admin &nbsp;{{title}} </a>
+      </div>
+      <div id="account-actions">
+        <a href="#" data-title="Home"><fa-icon [icon]="faHome"></fa-icon></a>
+        <!-- <a href="#" id="messages" data-title="Messages" data-newmessages="1"><i><fa-icon [icon]="faInbox"></fa-icon></i></a> -->
+        <a href="#" data-title="Settings"
+          ><fa-icon [icon]="faCogs"></fa-icon
+        ></a>
+      </div>
+      <ul id="main-nav">
+        <li class="active">
+          <a href="#" [routerLink]="['dashboard']" routerLinkActive="active">
+            <i> <fa-icon [icon]="faTachometerAlt"></fa-icon></i>&nbsp;&nbsp;&nbsp; Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="#" [routerLink]="['viewusers']">
+            <i> <fa-icon [icon]="faUser"></fa-icon></i>&nbsp;&nbsp;&nbsp; Users
+          </a>
+        </li>
+        <li>
+          <a href="#" [routerLink]="['vieworders']">
+            <i> <fa-icon [icon]="faShippingFast"></fa-icon></i>&nbsp;&nbsp; Orders
+          </a>
+        </li>
+        <li>
+          <a href="#" [routerLink]="['viewproducts']">
+            <i> <fa-icon [icon]="faBoxes"></fa-icon></i>&nbsp;&nbsp;&nbsp;
+            Products
+          </a>
+        </li>
+        <li>
+          <a href="#" [routerLink]="['viewcategories']">
+            <i> <fa-icon [icon]="faList"></fa-icon></i>&nbsp;&nbsp;&nbsp;
+            Categories
+          </a>
+        </li>
+        <li>
+          <a href="#" [routerLink]="['coupen']">
+            <i> <fa-icon [icon]="faTicket"></fa-icon></i>&nbsp;&nbsp;&nbsp; Coupens</a>
+        </li>
+       <!--  <li>
+          <a href="#" [routerLink]="['addcategory']">
+            <i> <fa-icon [icon]="faAirFreshener"></fa-icon></i
+            >&nbsp;&nbsp;&nbsp; Add Category
+          </a>
+        </li>-->
+      </ul>
+    </nav>
+    <form id="admin-signout">
+      <!-- <input type="text" id="search-field" placeholder="Search" /> -->
+
+      <label for="signout-field" id="signout-label" title="Search"  routerLink="/admin" (click)="logout()"><fa-icon [icon]="faSignout"></fa-icon></label>
+      <!-- <i class="fa fa-search"></i> -->
+    </form>
+    <div id="header_logo">
+      <a href="#">Logo</a>
+    </div>
+  </header>
+  <section id="content" class="content">
+    <!-- <app-dashboard></app-dashboard> -->
+
+    <router-outlet></router-outlet>
+
+  </section>
+  <footer></footer>
+</body>

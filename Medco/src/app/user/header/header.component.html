@@ -1,0 +1,138 @@
+<!--
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#"> <fa-icon [icon]="falogo"></fa-icon>&nbsp; Medco</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link " >Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home/coupon">Offers</a>
+      </li>&nbsp;
+      <!-- <li class="nav-item dropdown">
+        <div class="select-style">
+          <select #mySelect (change)='onOptionsSelected(mySelect.value)' >
+            <option>Categories</option>
+          <option *ngFor="let category of categories" value={{category.catid}}>{{category.catname}}</option>
+          </select>
+        </div> -->
+
+        <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Category
+        </a> -->
+        <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown"> -->
+
+
+
+
+          <!-- <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a> -->
+
+          <!-- <label class="fa fa-sort">Category</label>
+          <select class="floatLabel"  formControlName="categoryName" required>
+            <option value="0">--Select--</option>
+            <option  *ngFor="let category of categories"
+            value={{category.catName}}>
+        {{category.catName}}
+      </option>
+          </select> -->
+
+
+
+<!--
+        </div> -->
+      <!-- </li> -->
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <!-- <ng-container *ngIf="log != false"  > -->
+      <button class="btn  mr-sm-2 " routerLink="/home/cart"  type="submit"><fa-icon [icon]="facart"></fa-icon><div class="badge bg-danger">{{totalItemNumber}}</div></button>
+      <button class="btn  mr-sm-2 " (click)="register()"  type="submit">Register</button>
+      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+      <button class="btn  my-2 my-sm-0" (click)="login()"  type="submit">Login  </button>
+    <!-- </ng-container>
+      <ng-container *ngIf="log ==false" > -->
+        <button class="btn  my-2 my-sm-0"   type="submit">{{title}}</button>
+      <button class="btn  my-2 my-sm-0" (click)="logout()"  type="submit">Logout</button>
+    <!-- </ng-container> -->
+    </form>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+<!--
+
+<nav class="navbar navbar-expand-lg sticky-top  ">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Navbar</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav> -->

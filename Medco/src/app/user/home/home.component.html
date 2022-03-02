@@ -1,0 +1,78 @@
+<!--Changing the number in the column_# class changes the number of columns-->
+
+	<!-- <div id="wrap">
+	<div id="columns" class="columns_4">
+  <figure *ngFor="let product of products">
+  <img src={{product.imgUrl}} height="250px" width="150px"/>
+	<figcaption>{{product.productName}}</figcaption>
+  <p class="price">Mkt:{{product.mfgName}}</p>
+    <p class="price">Price* ₹ {{product.price}}</p>
+    <a class="button" href="#">Add to Cart</a>
+	</figure>
+
+
+
+
+</div> -->
+<!-- <div class="row">
+<div class="col-md-3 mt-1 mb-1" *ngFor="let product of products">
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src={{product.imgUrl}} alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{product.productName}}</h5>
+    <p class="card-text">Mkt:{{product.mfgName}}</p>
+    <p class="card-text">Price* ₹ {{product.price}}</p>
+    <a href="#" class="btn btn-primary">Add to Cart</a>
+  </div>
+</div>
+</div>
+</div> -->
+<nav class="navbar navbar-light bg-light">
+
+
+   <div class="form-inline">
+    <input class="form-control mr-sm-2" type="search"  [(ngModel)]="term" item.productname= "term" placeholder="Search" aria-label="Search">
+    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+  </div>
+  <!-- <div class="mb-3">
+
+    <label for="exampleFormControlInput1" class="form-label">Search item</label>
+
+    <input type="text" [(ngModel)]="term" item.productname= "term" placeholder="Type to search item">
+
+  </div> -->
+  &nbsp;
+  <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <div class="select-style">
+          <select #mySelect (change)='onOptionsSelected(mySelect.value)' >
+            <!--  -->
+            <option >Categories</option>
+          <option *ngFor="let category of categories" value={{category.catid}}>{{category.catname}}</option>
+          </select>
+        </div>
+        </li>
+        </ul>
+
+</nav>
+
+
+ <div class="row">
+   <ng-container  >
+  <div class="col-sm-3 mt-3 mb-2" *ngFor="let item of productList | filter:term" >
+    <div class="card" >
+      <img class="card-img-top" src={{item.imgurl}} height="250"   alt="Card image cap">
+      <div class="card-body"  >
+        <h5 class="card-title">Mkt:{{item.mfgname}}</h5>
+        <p class="card-text">{{item.productname}}</p>
+        <p class="card-text">Price* ₹ {{item.price}}</p>
+
+        <button class="btn btn-primary" (click)="addtoCart(item)" >Add to Cart</button>
+
+      </div>
+    </div>
+  </div></ng-container>
+
+</div>
+

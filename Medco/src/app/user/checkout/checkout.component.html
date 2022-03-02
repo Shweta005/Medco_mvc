@@ -1,0 +1,119 @@
+<div class="container col-md-9 ">
+  <div class="py-3 text-center">
+
+    <h1>Checkout form</h1>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-3">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Your cart</span>
+        <span class="badge badge-secondary badge-pill"></span>
+      </h4>
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let product of products; let i = index">
+          <div>
+            <h6 class="my-0">{{product.mfgname}}</h6>
+            <small class="text-muted">{{product.productname}}</small>
+          </div>
+          <span class="text-muted">Rs.{{product.price}}</span>
+        </li>
+
+
+        <li class="list-group-item d-flex justify-content-between bg-light">
+          <div class="text-success">
+            <h6 class="my-0">Promo code</h6>
+            <small>{{promocode}}</small>
+          </div>
+          <span class="text-success">-Rs{{discount}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Total (Rs)</span>
+          <strong >{{Total}}</strong>
+        </li>
+      </ul>
+      <!-- [formGroup]="CheckoutForm"  (ngSubmit)="addOrder()"  -->
+      <form [formGroup]="RedeemForm"  (ngSubmit)="Redeem()" class="card p-1">
+        <div class="input-group">
+          <input type="text" formControlName ="coupencode" class="form-control"  placeholder="Promo code">
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-secondary">Redeem</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-8 order-md-1">
+      <h2 class="mb-3">Billing address</h2>
+      <div class="needs-validation"  novalidate>
+
+<form [formGroup]="UserForm" >
+        <div class="row">
+
+          <div class="col-md-6 mb-3">
+            <label for="firstName">First name</label>
+            <input type="text" class="form-control" formControlName="firstname" placeholder="Firstname"   />
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Last name</label>
+            <input type="text" class="form-control"  formControlName="lastname" placeholder="Lastname" >
+            <div class="invalid-feedback">
+              Valid last name is required.
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Username</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+              <input type="text" class="form-control" formControlName="email"  placeholder="Username" required/>
+              <div class="invalid-feedback" style="width: 100%;">
+                Your username is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="address">Address</label>
+            <input type="text" class="form-control"  formControlName="address" placeholder="Address" required>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
+        </div>
+      </form>
+
+        <hr class="col-md-11 mb-4">
+<form [formGroup]="CheckoutForm" (ngSubmit)="Checkout()">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="save-info">
+          <label class="custom-control-label" for="save-info">Have coupon code</label>
+        </div>
+        <hr class=" col-md-11 mb-2">
+        <h2 class=" col-md-4 mb-3">Payment</h2>
+            <div class="d-block my-3">
+              <div class="custom-control custom-radio">
+                <input id="credit" name="paymentMethod"  type="radio" class="custom-control-input" checked required>
+                <label class="custom-control-label" for="credit">Cash on delivery</label>
+              </div>
+              </div>
+
+        <button class="btn btn-primary btn-lg btn-block"   type="submit">Continue to checkout</button>
+      </form>
+        <hr class="mb-4">
+
+            </div>
+
+    </div>
+  </div>
+
+
+</div>

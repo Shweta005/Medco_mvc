@@ -1,0 +1,28 @@
+
+<div class="row">
+  <div class="col-md-12">
+
+    <form [formGroup]="addCategoryForm"  (ngSubmit)="addCategory()" class="form2">
+     <fieldset>
+
+        <legend> Add New Category</legend>
+
+      <label for="name">Catgory Id:</label>
+        <input type="number" id="categoryId" formControlName="catid" required  name="cat_id">
+
+       <label for="name">Catgory Name:</label>
+        <input type="text" id="categoryName" required formControlName="catname" name="cat_name">
+       </fieldset>
+       <button type="submit">Add</button>
+    <!-- <div class="flex-content-between">
+      <button  type="submit" >Add</button>
+    <button  type="submit">Update</button>
+      <button  type="submit" >Delete</button>
+    </div> -->
+     </form>
+
+
+
+      </div>
+    </div>
+

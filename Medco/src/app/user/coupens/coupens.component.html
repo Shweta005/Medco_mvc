@@ -1,0 +1,34 @@
+
+<div class="container">
+  <h1 class="upcomming">Available Coupons</h1>
+  <div class="item" *ngFor="let coupen of coupens">
+    <div class="item-right">
+      <h3 class="num">{{coupen.discount}}</h3>
+      <p class="day">Off</p>
+      <span class="up-border"></span>
+      <span class="down-border"></span>
+    </div> <!-- end item-right -->
+
+    <div class="item-left">
+      <p class="event">{{coupen.coupenname}}</p>
+      <h2 class="title">{{coupen.coupencode}}</h2>
+
+      <div class="sce">
+        <div class="icon">
+          <i class="fa fa-table"></i>
+        </div>
+        <p>Start Date: {{coupen.createddate}} <br/>Expiry: {{coupen.expirydate}}</p>
+      </div>
+      <!-- <div class="fix"></div>
+      <div class="loc">
+        <div class="icon">
+          <i class="fa fa-map-marker"></i>
+        </div>
+        <p>North,Soth, United State , Amre <br/> Party Number 16,20</p>
+      </div> -->
+      <!-- <div class="fix"></div> -->
+
+    </div> <!-- end item-right -->
+  </div> <!-- end item -->
+
+</div>

@@ -1,0 +1,55 @@
+
+<div class="row">
+  <div class="col-md-12">
+    <form [formGroup]="editOrderForm"  (ngSubmit)="updateOrder()" novalidate >
+      <h1>Update Order </h1>
+
+      <fieldset>
+        <label for="name">Order Id:</label>
+        <input type="number" id="oid" required formControlName="oid" />
+
+        <label for="name">Product Id:</label>
+        <input type="number" id="pid" required formControlName="pid" />
+
+        <label for="name">User Id:</label>
+        <input type="number" id="uid" required formControlName="uid"/>
+
+        <label for="name">Total Price:</label>
+        <input type="number" id="price" required formControlName="totalprice" />
+
+
+        <label for="product-url">Quantity:</label>
+        <input type="number" id="qty"  formControlName="quantity" name="qty" required/>
+
+
+        <label for="product-desc">Address:</label>
+        <input type="text" id="address"  formControlName="address" name="address"required/>
+
+        <label for="product-desc">Order Date:</label>
+        <input type="date" id="address"  formControlName="ordereddate" name="address"required/>
+
+        <label for="product-desc">Delivery Date:</label>
+        <input type="date" id="ddate"  formControlName="deliverydate" name="address"required/>
+
+        <label for="cat-id">Coupen code:</label>
+        <input type="text/number" id="code" name="coupen" formControlName="coupen" />
+
+        <label for="cat-id">Order Status</label>
+        <select class="form-select select" formControlName="orderstatus" aria-label="Default select example">
+          <option value="Order Placed">Order Placed</option>
+          <option value="Confirmed">Confirmed</option>
+          <option value="Dispatch">Dispatch</option>
+          <option value="Delivered">Delivered</option>
+        </select>
+
+
+  <button type="submit">Update</button>
+  <!-- <button type="submit">update</button>
+  <button type="submit">Delete</button> -->
+      </fieldset>
+
+    </form>
+
+      </div>
+    </div>
+

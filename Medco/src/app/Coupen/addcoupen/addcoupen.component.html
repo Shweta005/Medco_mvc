@@ -1,0 +1,134 @@
+<div>
+  <header id="content-header">
+    {{ title }}
+  </header>
+  <div class="container ">
+    <div class="card">
+      <div class="card-header" role="tab" id="headingOne">
+        <h3 class=" name mb-0">
+          <span> </span>
+          <!-- <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> -->
+            Create Coupen
+          <!-- </a> -->
+        </h3>
+      </div>
+      <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+  <form [formGroup]="addCoupenForm"  (ngSubmit)="addCoupen()">
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="inputEmail4">Coupen Id</label>
+        <input type="number" class="form-control" formControlName="cid" id="inputEmail4" placeholder="Coupen Id">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputPassword4">Coupen code</label>
+        <input type="text/number" class="form-control" formControlName="coupencode" id="inputPassword4" placeholder="Coupen code">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputPassword4">Coupen name</label>
+        <input type="text" class="form-control" id="inputPassword4" formControlName="coupenname" placeholder="Coupen Name">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputPassword4">Applies to(Category)</label>
+        <select id="inputState" formControlName="appliesto" class="form-control" >
+          <option value="0" >Choose</option>
+          <option  *ngFor="let category of categories" value={{category.catid}} >{{category.catname}}</option>
+
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="inputEmail4">Availability</label>
+        <!-- <h4>For setting true click on checkbox</h4>
+        <input type="checkbox" id="vehicle1" formControlName="availability" name="vehicle1" value="True"> -->
+        <select id="validity" formControlName="availability" class="form-control">
+          <option selected>True</option>
+          <option>False</option>
+
+        </select>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputPassword4">Discount (%)</label>
+        <input type="number" class="form-control" id="inputPassword4" formControlName="discount" placeholder="Discount">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputPassword4">Created Date</label>
+        <input type="date" class="form-control" id="inputPassword4"  formControlName="createddate" placeholder="Created at">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputPassword4">Expiry Date </label>
+        <input type="date" class="form-control" id="inputPassword4" formControlName="expirydate" placeholder="Expired">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputPassword4">Closed Date</label>
+        <input type="date" class="form-control" id="inputPassword4"   formControlName="closeddate" placeholder="Closed">
+      </div>
+      <!-- <div class="form-group col-md-3">
+        <label for="inputState">Check Category Id Here</label>
+        <select id="inputState" class="form-control bg-info" >
+          <option >Choose...</option>
+          <option>...</option>
+        </select>
+      </div> -->
+    </div>
+      <div class="buttons">
+      <button type="submit" class="btn btn-primary">Create Coupen</button>&nbsp;&nbsp;
+      <button type="submit" class="btn btn-primary" (click)="updateCoupen()" >Update Coupen</button>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
+<!-- Grid -->
+<div class="container mt-4">
+  <div class="card mt-4">
+    <div class="card-header" role="tab" id="headingOne">
+      <h3 class=" name mb-0">
+        <span> </span>
+        <!-- <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> -->
+          Coupen List
+        <!-- </a> -->
+      </h3>
+    </div>
+    <div class="card-body">
+
+      <!-- Grid row -->
+      <div class="row">
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+      <!--Table-->
+      <table class="table table-striped">
+        <!--Table head-->
+        <thead>
+          <tr>
+
+            <th>Coupen Code</th>
+            <th>Disc.(%)</th>
+            <th>Expiry</th>
+            <th>Alive</th>
+            <th>Action</th>
+
+          </tr>
+        </thead>
+        <!--Table head-->
+        <!--Table body-->
+        <tbody *ngFor="let coupen of coupens" >
+          <tr>
+           <th scope="row">{{coupen.coupencode}}</th>
+
+            <td>{{coupen.discount}}</td>
+            <td>{{coupen.expirydate | date:'yyyy-MM-dd'}}  </td>
+            <td>{{coupen.availability}}</td>
+           <td><button class="btn btn-primary" (click)="editCoupen(coupen)" ><fa-icon [icon]="faEdit"></fa-icon></button>&nbsp;&nbsp;
+          <button class="btn btn-primary" (click)="deleteCoupen(coupen)" ><fa-icon [icon]="faDelete"></fa-icon></button></td>
+          </tr>
+        </tbody>
+        <!--Table body-->
+      </table>
+      <!--Table-->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+<div>
+  <header id="content-header">
+    {{ title}}
+   </header>
+
+
+            <!--MDB Tables-->
+            <div class="container mt-4">
+
+              <div class="card mb-4">
+                  <div class="card-body">
+
+                      <!-- Grid row -->
+                      <div class="row">
+                          <!-- Grid column -->
+                         <!-- <div class="col-md-12">
+                              <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text">Search within table</h2>
+                               <div class="input-group md-form form-sm form-2 pl-0">
+                                  <input class="form-control my-0 py-1 pl-3 purple-border" type="text" placeholder="Search something here..." aria-label="Search">
+                                  <span class="input-group-addon waves-effect purple lighten-2" id="basic-addon1"><a><i class="fa fa-search white-text" aria-hidden="true"></i></a></span>
+                              </div>
+                          </div>-->
+                          <!-- Grid column -->
+                      </div>
+                      <!-- Grid row -->
+                      <!--Table-->
+                      <table class="table table-striped">
+                          <!--Table head-->
+                          <thead>
+                              <tr>
+                                  <!-- <th>#</th> -->
+                                  <th>OId</th>
+                                  <th>UId</th>
+                                  <th>PId</th>
+                                  <th>Price</th>
+                                  <!-- <th>Qty.</th> -->
+                                  <th>Status</th>
+                                  <th>Actions</th>
+                                  <!-- <th>Order Date</th> -->
+                                  <!-- <th>Delivery Date</th> -->
+                              </tr>
+                          </thead>
+                          <!--Table head-->
+                          <!--Table body-->
+                          <tbody *ngFor="let order of orders">
+                              <tr>
+                                  <!-- <th scope="row">{{order.id}}</th> -->
+                                  <td>{{order.oid}}</td>
+                                  <td>{{order.uid}} </td>
+                                  <td>{{order.pid}} </td>
+                                  <td>Rs.{{order.totalprice}} </td>
+                                  <!-- <td>{{order.quantity}}</td> -->
+                                  <td>
+                             {{order.orderstatus}}
+                                  <!--     <select class="form-select select" aria-label="Default select example">
+                                    <option selected value="{{order.orderstatus}}">{{order.orderstatus}}</option>
+                                    <option value="Confirmed">Confirmed</option>
+                                    <option value="Dispatch">Dispatch</option>
+                                    <option value="Delivered">Delivered</option>
+                                  </select> -->
+                                    </td>
+                                    <td><button class="btn btn-primary"(click)="deleteOrder(order)" >Delete</button>&nbsp; &nbsp;
+                                      <button class="btn btn-primary" (click)="updateOrder(order)"  >Edit</button></td>
+
+
+
+                                  <!-- <td>{{order.orderedDate}}</td> -->
+                                  <!-- <td>{{order.deliveryDate}}</td> -->
+                              </tr>
+
+                          </tbody>
+                          <!--Table body-->
+                      </table>
+                      <!--Table-->
+                  </div>
+              </div>
+
+
+
+  </div>

@@ -1,0 +1,153 @@
+<ng-container *ngIf="products.length !=0">
+  <div class="container">
+      <div class="card-table">
+          <div class="cart-product">
+              <table class="table table-responsive">
+                  <thead>
+                      <tr>
+                          <th>Sr .No</th>
+                          <th>ProductName</th>
+                          <th>Description</th>
+                          <th>Price</th>
+                          <th>Total</th>
+                          <th>Image</th>
+                          <th>RemoveItem</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let user of products; let i = index">
+                          <td style="width: 12%;">{{i+1}}</td>
+                          <td style="width: 12%;">{{user.productname}}</td>
+                          <td style="width: 12%;">{{user.productdesc}}</td>
+                          <td style="width: 12%;">{{user.price}}</td>
+                         <td style="width: 12%;">{{user.price}}</td>
+                          <td style="width: 25%;"><img src={{user.imgurl}} style="height: 5cm; width: 20;"><br>
+                          <td>
+                              <button (click)="removeProduct(user)" class="btn btn-danger"><i> <fa-icon [icon]="fatrash"></fa-icon></i></button>
+                          </td>
+
+                      </tr>
+                      <tr>
+
+                              <td colspan="4"></td>
+                              <td><button (click)="removeAllProduct()" class="btn btn-danger">Empty Cart</button></td>
+                              <td><button routerLink="/home/products" class="btn btn-primary">Shop More</button></td>
+                              <td><strong>Grand Total : INR{{Total}}</strong></td>&nbsp;
+                              <td><button  class="btn btn-danger" (click)="checkout()">Checkout</button></td>
+
+
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="products.length ==0">
+  <div class="container">
+      <div class="card">
+          <h1 class="card-title">My Cart</h1>
+      </div>
+      <div class="center">
+          <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"  draggable="false" alt="">
+          <h4>Your cart is empty!</h4>
+
+          <button routerLink="/home/products" class="btn btn-primary">Shop Now</button>
+      </div>
+  </div>
+</ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ng-container>
+<section class="pt-5 pb-5">
+  <div class="container">
+    <div class="row w-100">
+        <div class="col-lg-12 col-md-12 col-12">
+            <h1 class="display-5 mb-2 text-center">Shopping Cart</h1>
+            <p class="mb-5 text-center">
+                <i class="text-info font-weight-bold">3</i> items in your cart</p>
+            <table id="shoppingCart" class="table table-condensed table-responsive">
+                <thead>
+                    <tr >
+                      <th style="width:60%">Sr no</th>
+                        <th style="width:60%">Product</th>
+                        <th style="width:12%">Price</th>
+                        <th style="width:10%">Quantity</th>
+                        <th style="width:16%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of products,let i = index">
+                         <td data-th="sr-no">srno</td>
+                      <td data-th="Product">
+                            <div class="row">
+
+
+                                <div class="col-md-3 text-left">
+                                    <img src={{item.imgUrl}} alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
+                                </div>
+                                <div class="col-md-9 text-left mt-sm-2">
+                                    <h4>{{item.productName}}</h4>
+                                    <p class="font-weight-light">{{item.productDesc}}</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-th="Price">${{item.price}}</td>
+                        <td data-th="Quantity">
+                            <input type="number" class="form-control form-control-lg text-center" value="1">
+                        </td>
+                        <td class="actions" data-th="">
+                            <div class="text-right">
+                                <button class="btn btn-white border-secondary bg-white btn-md mb-2">
+                                  <fa-icon [icon]="fasync"></fa-icon>
+                                </button>
+                                <button (click)="removeProduct(item)" class="btn btn-white border-secondary bg-white btn-md mb-2">
+                                  <fa-icon [icon]="fatrash"></fa-icon>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <div class="float-right text-right">
+                <h4>Subtotal:</h4>
+                <h1>{{Total}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4 d-flex align-items-center">
+        <div class="col-sm-6 order-md-2 text-right">
+            <a href="catalog.html" class="btn btn-primary mb-4 btn-lg pl-5 pr-5">Checkout</a>
+        </div>
+        <div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
+            <a href="catalog.html">
+                <i class="fas fa-arrow-left mr-2"></i> Continue Shopping</a>
+        </div>
+    </div>
+</div>
+</section>
+</ng-container> -->

@@ -1,0 +1,74 @@
+
+<div class="row">
+  <div class="col-md-12">
+    <form [formGroup]="addProductForm"  (submit)="addProduct()" novalidate >
+      <h1>Add Product </h1>
+
+      <fieldset>
+        <label for="name">Product Id:</label>
+        <input type="number" id="id" required formControlName="pid" name="user_name"/>
+
+        <label for="name">Product Name:</label>
+        <input type="text" id="name" required formControlName="productname" name="user_name"/>
+ <div *ngIf="addProductForm.controls['productname'].invalid && addProductForm.controls['productname'].touched "class="alert alert-danger">
+      <div *ngIf="addProductForm.controls['productname'].errors">
+    Product name must be alphabets or must have a value.
+     </div>
+     </div>
+
+        <label for="product-url">Product Img URL:</label>
+        <input type="url" id="url"  formControlName="imgurl" name="product_url" required/>
+        <div *ngIf="addProductForm.controls['imgurl'].invalid && addProductForm.controls['imgurl'].touched" class="alert alert-danger">
+          <div *ngIf="addProductForm.controls['imgurl'].errors">
+        URL is not valid.
+         </div>
+         </div>
+        &nbsp;&nbsp;&nbsp;
+        <label for="product-desc">Product Description:</label>
+        <input type="text" id="product-desc"  formControlName="productdesc" name="product-desc"required/>
+        <div *ngIf="addProductForm.controls['productdesc'].invalid && addProductForm.controls['productdesc'].touched" class="alert alert-danger">
+          <div *ngIf="addProductForm.controls['productdesc'].errors">
+        This field cannot be empty.
+         </div>
+         </div>
+          <div class="controls">
+    <label class="fa fa-sort">Category</label>
+    <select class="floatLabel"  formControlName="categoryname" required>
+      <option value="0">--Select--</option>
+      <option  *ngFor="let category of categories" value={{category.catname}}>
+  <!-- {{category.catid}} -->
+  {{category.catname}}
+</option>
+    </select>
+     <label for="cat-id">Catgory Id:</label>
+    <input type="number" id="id" name="catid"   formControlName="catid" />
+
+    <label for="cat-id">Quantity</label>
+    <input type="number" id="id" name="catid"  formControlName="quantity" required/>
+
+             <label for="product-id">Product Price:</label>
+        <input type="number" id="price" name="product_price"  formControlName="price" required/>
+
+
+
+            <label for="name">Manufacturer Name:</label>
+        <input type="text" id="name" required formControlName="mfgname" name="manu_name" required/>
+        <div *ngIf="addProductForm.controls['mfgname'].invalid && addProductForm.controls['mfgname'].touched" class="alert alert-danger">
+          <div *ngIf="addProductForm.controls['mfgname'].errors">
+        Product name cannot be empty.
+         </div>
+         </div>
+  </div>
+  <button type="submit">Add</button>
+  <!-- <button type="submit">update</button>
+  <button type="submit">Delete</button> -->
+      </fieldset>
+
+    </form>
+
+
+
+
+
+      </div>
+    </div>
